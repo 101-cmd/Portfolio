@@ -774,10 +774,123 @@
         border-color: var(--color-accent);
       }
 
-      .bio-link span {
+      .bio-link > span[aria-hidden] {
         transition: transform 0.15s ease;
       }
 
-      .bio-link:hover span {
+      .bio-link:hover > span[aria-hidden] {
         transform: translateX(2px);
+      }
+
+      /* ===== Additions: project cards, tech stack, bio link fix =====
+   Linked after style.css in index.html. You can also paste this
+   at the bottom of style.css and remove the extra <link>. */
+
+      /* Project cards */
+      .work-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .work-thumb {
+        aspect-ratio: 16 / 10;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 22px;
+        background: linear-gradient(135deg, #e9e6fb, #d6d1f7);
+      }
+
+      .work-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .work-card .tag {
+        align-self: flex-start;
+      }
+
+      .work-links {
+        display: flex;
+        gap: 18px;
+        margin-top: auto;
+        padding-top: 22px;
+      }
+
+      .work-links a {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--purple);
+        text-decoration: none;
+      }
+
+      .work-links a:hover,
+      .work-links a:focus-visible {
+        text-decoration: underline;
+      }
+
+      /* Tech stack chips */
+      .stack {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .stack li {
+        font-size: 12.5px;
+        font-weight: 500;
+        color: var(--grey-text);
+        background: var(--bg-hero);
+        border: 1px solid #e4e2ee;
+        border-radius: 999px;
+        padding: 4px 12px;
+      }
+
+      .stack-block {
+        margin-top: 56px;
+      }
+
+      .stack-block h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .stack-block .stack {
+        margin-top: 18px;
+      }
+
+      .stack-block .stack li {
+        font-size: 14px;
+        padding: 6px 16px;
+      }
+
+      /* Bio link: the original used CSS variables that were never defined */
+      .bio-link {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--purple);
+        text-decoration: none;
+        border-bottom: 0;
+      }
+
+      .bio-link-text {
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 0.2em;
+      }
+
+      .bio-link:hover,
+      .bio-link:focus-visible {
+        color: #2c2468;
+        border-color: #2c2468;
+      }
+
+      @media (max-width: 768px) {
+        .stack-block {
+          margin-top: 40px;
+        }
       }
