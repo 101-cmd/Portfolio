@@ -894,3 +894,31 @@
           margin-top: 40px;
         }
       }
+
+      
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  margin-left: 20px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--grey-text);
+}
+
+.footer-inner a {
+  color: var(--purple);
+  font-weight: 500;
+  border-bottom: 1px solid var(--purple);
+}
+.footer-inner a:hover,
+.footer-inner a:focus-visible {
+  color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
